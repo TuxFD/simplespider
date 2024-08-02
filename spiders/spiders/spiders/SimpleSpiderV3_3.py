@@ -2,7 +2,14 @@ import scrapy
 from spiders.items import SpidersItem
 from scrapy.exceptions import CloseSpider
 
-from simple_config import CATEGORIES
+CATEGORIES = [
+    # "Rohrverbindungen/",
+    "Rohrverbindungen/Verschraubungen/",
+    "Rohrverbindungen/Flanschverbindungen/",
+    "Rohrverbindungen/Clampverbindungen/",
+    "Rohrverbindungen/Schlauchverbindungen/",
+    "Rohrverbindungen/Industriefittings/",
+]
 
 # ===========================================================
 # NOTE: start_urls обязательно содержит минимум 1 ссылку

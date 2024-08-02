@@ -2,7 +2,14 @@ import scrapy
 from spiders.items import SpidersItem
 from scrapy.exceptions import CloseSpider
 
-from simple_config import CATEGORIES
+CATEGORIES = [
+    # "Rohrverbindungen/",
+    "Rohrverbindungen/Verschraubungen/",
+    "Rohrverbindungen/Flanschverbindungen/",
+    "Rohrverbindungen/Clampverbindungen/",
+    "Rohrverbindungen/Schlauchverbindungen/",
+    "Rohrverbindungen/Industriefittings/",
+]
 
 # ===========================================================
 # NOTE: start_urls обязательно содержит минимум 1 ссылку
@@ -13,13 +20,13 @@ from simple_config import CATEGORIES
 
 
 class SimpleSpiderV3(scrapy.Spider):
-    name = "SimpleSpiderV3_2"
+    name = "SimpleSpiderV3_1"
     allowed_domains = ["shop.ms-armaturen.de"]
     start_urls = [
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
     ]
     visited_urls = []
-    category_url = CATEGORIES[1]
+    category_url = CATEGORIES[0]
     current_product_category = ""
 
     def parse(self, response):
@@ -30,13 +37,13 @@ class SimpleSpiderV3(scrapy.Spider):
 
             products_table = False
             products_table = response.xpath("//tbody").extract()
-            page404 = False
-            page404 = response.xpath(
-                "//h1[contains(text(), 'Seite nicht gefunden')]"
-            ).extract()
+            # page404 = False
+            # page404 = response.xpath(
+            #     "//h1[contains(text(), 'Seite nicht gefunden')]"
+            # ).extract()
 
             # парсим страницы товаров при наличии
-            if products_table and not page404:
+            if products_table:
                 for product_link in response.xpath("//tbody/tr/td/a/@href").extract():
                     yield response.follow(
                         product_link,
@@ -44,13 +51,14 @@ class SimpleSpiderV3(scrapy.Spider):
                     )
 
                 # переходим на следующие страницы внутри категории
-                for i in range(2, 1000):
-                    next_url = response.url.replace("&p=1", "&p=" + str(i))
+                for i in range(2, 35):
+                    curr_url = str(response.url)
+                    next_url = curr_url.replace("&p=1", "&p=" + str(i))
                     yield response.follow(next_url, callback=self.parse)
 
             # нет товаров - останавливаем паука
-            else:
-                raise CloseSpider("End of products table!")
+            # else:
+            #     raise CloseSpider("End of products table!")
 
     def parse_product(self, response):
         item = SpidersItem()

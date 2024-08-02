@@ -1,7 +1,14 @@
 import scrapy
 from spiders.items import SpidersItem
 # from scrapy.exceptions import CloseSpider
-# from simple_config import CATEGORIES
+# CATEGORIES = [
+    # "Rohrverbindungen/",
+    "Rohrverbindungen/Verschraubungen/",
+    "Rohrverbindungen/Flanschverbindungen/",
+    "Rohrverbindungen/Clampverbindungen/",
+    "Rohrverbindungen/Schlauchverbindungen/",
+    "Rohrverbindungen/Industriefittings/",
+]
 
 MAINPAGE = "https://shop.ms-armaturen.de/"
 SORTING = "?order=m-s-artikelnummer-aufsteigend&p="

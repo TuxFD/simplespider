@@ -2,7 +2,14 @@ import scrapy
 from spiders.items import SpidersItem
 from scrapy.exceptions import CloseSpider
 
-from simple_config import CATEGORIES
+CATEGORIES = [
+    # "Rohrverbindungen/",
+    "Rohrverbindungen/Verschraubungen/",
+    "Rohrverbindungen/Flanschverbindungen/",
+    "Rohrverbindungen/Clampverbindungen/",
+    "Rohrverbindungen/Schlauchverbindungen/",
+    "Rohrverbindungen/Industriefittings/",
+]
 
 # ===========================================================
 # NOTE: start_urls обязательно содержит минимум 1 ссылку
@@ -13,13 +20,13 @@ from simple_config import CATEGORIES
 
 
 class SimpleSpiderV3(scrapy.Spider):
-    name = "SimpleSpiderV3_1"
+    name = "SimpleSpiderV3_2"
     allowed_domains = ["shop.ms-armaturen.de"]
     start_urls = [
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
     ]
     visited_urls = []
-    category_url = CATEGORIES[0]
+    category_url = CATEGORIES[1]
     current_product_category = ""
 
     def parse(self, response):
