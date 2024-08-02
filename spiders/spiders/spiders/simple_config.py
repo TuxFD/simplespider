@@ -4,10 +4,10 @@
 
 CATEGORIES = [
     # "Rohrverbindungen/",
-    # "Rohrverbindungen/Verschraubungen/",
-    # "Rohrverbindungen/Flanschverbindungen/",
-    # "Rohrverbindungen/Clampverbindungen/",
-    # "Rohrverbindungen/Schlauchverbindungen/",
+    "Rohrverbindungen/Verschraubungen/",
+    "Rohrverbindungen/Flanschverbindungen/",
+    "Rohrverbindungen/Clampverbindungen/",
+    "Rohrverbindungen/Schlauchverbindungen/",
     "Rohrverbindungen/Industriefittings/",
 ]
 
