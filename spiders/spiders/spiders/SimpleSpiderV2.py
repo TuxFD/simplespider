@@ -1,6 +1,8 @@
 import re
 import scrapy
 from spiders.items import SpidersItem
+from scrapy.exceptions import CloseSpider
+from simple_config import CATEGORIES
 
 MAINPAGE = "https://shop.ms-armaturen.de/"
 SORTING = "?order=m-s-artikelnummer-aufsteigend&p="
@@ -11,36 +13,46 @@ class SimpleSpiderV2(scrapy.Spider):
 
     name = "SimpleSpiderV2"
     allowed_domains = ["shop.ms-armaturen.de"]
+    # TODO: понять почему при нескольких ссылках запись в output.csv ломается
     start_urls = [
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Zubehoer/Montagematerial/Rohrkappen/Rosette/?order=m-s-artikelnummer-aufsteigend&p=1",
-    ]  # обязателен! минимум 1 ссылка!
+        "https://shop.ms-armaturen.de/Rohrverbindungen&p=1",  # обязателен! минимум 1 ссылка!
+    ]
     visited_urls = []
     current_category = ""
-
-    # def __init__(self):
-    #     self.erasefile()  # очистить файл output.csv
 
     def parse(self, response):
         if response.url not in self.visited_urls:  # учёт посещённых ссылок
             self.visited_urls.append(response.url)
-            category = (
-                str(response.url)
-                .replace(MAINPAGE, "")
-                .replace(SORTING, "")
-                .replace("/", ", ")
-            )
-            category = re.sub("\d+", "", category)
-            self.current_category = category
-            catd = dict()
-            catd["0"] = category
-            print(category)
 
-            for product_link in response.xpath("//tbody/tr/td/a/@href").extract():
-                yield response.follow(
-                    product_link,
-                    callback=self.parse_product,
+            products_table = False
+            products_table = response.xpath("//tbody").extract()
+
+            if products_table:
+                category = (
+                    str(response.url)
+                    .replace(MAINPAGE, "")
+                    .replace(SORTING, "")
+                    .replace("/", ", ")
                 )
+                category = re.sub("\d+", "", category)
+                self.current_category = category
+                catd = dict()
+                catd["0"] = category
+                print(category)
+
+                for product_link in response.xpath(
+                    "//tbody/tr/td/a/@href"
+                ).extract():  # парсим страницы товаров
+                    yield response.follow(
+                        product_link,
+                        callback=self.parse_product,
+                    )
+                # переходим на следующие страницы
+                for i in range(2, 5):
+                    next_url = response.url.replace("&p=1", "&p=" + str(i))
+                    yield response.follow(next_url, callback=self.parse)
+            else:
+                raise CloseSpider("End of products table!")
 
     def parse_product(self, response):
         item = SpidersItem()
