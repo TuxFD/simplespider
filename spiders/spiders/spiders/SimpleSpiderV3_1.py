@@ -18,12 +18,15 @@ class SimpleSpiderV3(scrapy.Spider):
     name = "SimpleSpiderV3_2"
     allowed_domains = ["shop.ms-armaturen.de"]
     start_urls = [
-        # "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Hygienearmaturen/T-Stuecke/?order=m-s-artikelnummer-aufsteigend&p=2",
-        "https://shop.ms-armaturen.de/Zubehoer/Behaelterarmaturen/?order=m-s-artikelnummer-aufsteigend&p=4",
+        # "Rohrverbindungen/", 24 items per page
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        # "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        # "https://shop.ms-armaturen.de/Rohrverbindungen/Clampverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        # "https://shop.ms-armaturen.de/Rohrverbindungen/Schlauchverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
     ]
     custom_settings = {
-        # "CONCURRENT_REQUESTS": 2,
+        # "CONCURRENT_REQUESTS": 1,
         "FEED_EXPORT_FIELDS": [
             "URL страницы",
             "Заголовок",
@@ -36,6 +39,7 @@ class SimpleSpiderV3(scrapy.Spider):
         ],
     }
     visited_urls = []
+    category_url = ""
     current_pr_category = ""
 
     def parse(self, response):
@@ -48,24 +52,32 @@ class SimpleSpiderV3(scrapy.Spider):
             # парсим страницы товаров при наличии
             if products_table:
                 self.current_pr_category = self.get_category(str(response.url))
+                self.category_url = self.get_category(
+                    string=str(response.url),
+                    no_commas=True
+                )
                 for product_link in response.xpath("//tbody/tr/td/a/@href").extract():
                     yield response.follow(
                         product_link,
                         callback=self.parse_product,
                     )
 
-            # # переходим на следующие страницы внутри категории
-            # for i in range(2, 35):
-            #     curr_url = str(response.url)
-            #     next_url = curr_url.replace("&p=1", "&p=" + str(i))
-            #     yield response.follow(next_url, callback=self.parse)
+            # переходим на следующие страницы внутри категории
+            i = 2
+            while i < 3:
+                next_url = DOMAIN + self.category_url + SORTING + str(i)
+                i += 1
+                yield response.follow(next_url, callback=self.parse)
 
             # нет товаров - останавливаем паука
             # else:
             #     raise CloseSpider("End of products table!")
 
-    def get_category(self, string):
-        string1 = string.replace(DOMAIN, "").replace(SORTING, "").replace("/", ", ")
+    def get_category(self, string, no_commas=False):
+        if no_commas:
+            string1 = string.replace(DOMAIN, "").replace(SORTING, "")
+        else:
+            string1 = string.replace(DOMAIN, "").replace(SORTING, "").replace("/", ", ")
         string2 = re.sub(r"\d", "", string1)
         return string2
 
@@ -74,21 +86,16 @@ class SimpleSpiderV3(scrapy.Spider):
         pr_header = response.xpath(
             "//h1[@class='product-detail-name']/text()"
         ).extract()
-        pr_articul = (
-            response.xpath("//span[@class='product-detail-ordernumber']/text()")
-            .extract()
-        )
-        pr_price = (
-            response.xpath("//p[@class='product-detail-price']/text()")
-            .extract()
-        )
+        pr_articul = response.xpath(
+            "//span[@class='product-detail-ordernumber']/text()"
+        ).extract()
+        pr_price = response.xpath("//p[@class='product-detail-price']/text()").extract()
         pr_stock = response.xpath(
             "//div[@class='product-detail-delivery-information']//p/text()"
         ).extract()
-        pr_weight = (
-            response.xpath("//span[@class='twt-product-detail-weight']/text()")
-            .extract()
-        )
+        pr_weight = response.xpath(
+            "//span[@class='twt-product-detail-weight']/text()"
+        ).extract()
         pr_pictures = response.xpath(
             "//div[@class='gallery-slider-thumbnails-item-inner']/img/@src"
         ).extract()
