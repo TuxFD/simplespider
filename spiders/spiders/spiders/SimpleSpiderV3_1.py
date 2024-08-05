@@ -7,6 +7,7 @@
 
 import re
 import scrapy
+
 # from scrapy.exceptions import CloseSpider
 
 CATEGORIES = []
@@ -23,7 +24,7 @@ class SimpleSpiderV3(scrapy.Spider):
         # "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
         # "https://shop.ms-armaturen.de/Rohrverbindungen/Clampverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
         # "https://shop.ms-armaturen.de/Rohrverbindungen/Schlauchverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
+        # "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
     ]
     custom_settings = {
         # "CONCURRENT_REQUESTS": 1,
@@ -40,7 +41,6 @@ class SimpleSpiderV3(scrapy.Spider):
     }
     visited_urls = []
     category_url = ""
-    current_pr_category = ""
 
     def parse(self, response):
         if response.url not in self.visited_urls:
@@ -51,10 +51,8 @@ class SimpleSpiderV3(scrapy.Spider):
 
             # парсим страницы товаров при наличии
             if products_table:
-                self.current_pr_category = self.get_category(str(response.url))
                 self.category_url = self.get_category(
-                    string=str(response.url),
-                    no_commas=True
+                    string=str(response.url), no_commas=True
                 )
                 for product_link in response.xpath("//tbody/tr/td/a/@href").extract():
                     yield response.follow(
@@ -82,6 +80,15 @@ class SimpleSpiderV3(scrapy.Spider):
         return string2
 
     def parse_product(self, response):
+        current_pr_category = ""
+
+        # TODO: получать категорию из ссылки:
+        print("===========================")
+        print()
+        print(str(response.request.headers.get("Referer", None)))
+        print()
+        print("===========================")
+
         pr_url = response.url
         pr_header = response.xpath(
             "//h1[@class='product-detail-name']/text()"
@@ -99,7 +106,7 @@ class SimpleSpiderV3(scrapy.Spider):
         pr_pictures = response.xpath(
             "//div[@class='gallery-slider-thumbnails-item-inner']/img/@src"
         ).extract()
-        pr_categories = self.current_pr_category
+        pr_categories = current_pr_category
 
         yield {
             "URL страницы": pr_url,
