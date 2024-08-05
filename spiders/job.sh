@@ -1,4 +1,5 @@
 #!/bin/sh
 
 python3 myscripts/erasefile.py;
-scrapy crawl SimpleSpiderV3_1 -o files/raw/output_1.csv -t csv;
+scrapy crawl SimpleSpiderV3_2 -o files/raw/output.csv -t csv;
+python3 myscripts/prettyfile.py;
