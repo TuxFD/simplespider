@@ -1,14 +1,5 @@
-# ===========================================================
-# NOTE: start_urls обязательно содержит минимум 1 ссылку
-# TODO: понять почему при нескольких ссылках start_urls запись в output.csv ломается
-# TODO: как гонять паука по нескольким категориям сайта? (вытекает из предыдущего)
-# ===========================================================
-
-
 import re
 import scrapy
-
-# from scrapy.exceptions import CloseSpider
 
 CATEGORIES = []
 DOMAIN = "https://shop.ms-armaturen.de/"
@@ -21,10 +12,10 @@ class SimpleSpiderV3(scrapy.Spider):
     start_urls = [
         # "Rohrverbindungen/", 24 items per page
         "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Rohrverbindungen/Clampverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Rohrverbindungen/Schlauchverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        # "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Clampverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Schlauchverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
+        "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
     ]
     custom_settings = {
         # "CONCURRENT_REQUESTS": 1,
@@ -62,14 +53,14 @@ class SimpleSpiderV3(scrapy.Spider):
 
             # переходим на следующие страницы внутри категории
             i = 2
-            while i < 3:
+            while i < 500:
                 next_url = DOMAIN + self.category_url + SORTING + str(i)
                 i += 1
                 yield response.follow(next_url, callback=self.parse)
 
             # нет товаров - останавливаем паука
-            # else:
-            #     raise CloseSpider("End of products table!")
+            else:
+                return
 
     def get_category(self, string, no_commas=False):
         if no_commas:
@@ -81,13 +72,8 @@ class SimpleSpiderV3(scrapy.Spider):
 
     def parse_product(self, response):
         current_pr_category = ""
-
-        # TODO: получать категорию из ссылки:
-        print("===========================")
-        print()
-        print(str(response.request.headers.get("Referer", None)))
-        print()
-        print("===========================")
+        refer_url = str(response.request.headers.get("Referer", None))
+        current_pr_category = self.get_category(refer_url)
 
         pr_url = response.url
         pr_header = response.xpath(
