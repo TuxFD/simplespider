@@ -1,17 +1,11 @@
-def erasefile():
-    # filename = "../spiders/files/raw/output.csv"
-    filenames = [
-        "files/raw/output_1.csv",
-        "files/raw/output_2.csv",
-        "files/raw/output_3.csv",
-        "files/raw/output_4.csv",
-        "files/raw/output_5.csv",
-    ]
+DEFAULT_FILENAME = "../spiders/files/raw/output.csv"
 
-    for filename in filenames:
-        f = open(filename, "w+")
-        f.close()
-        print("Success. File erazed: ", filename)
+
+def erasefile(filename=DEFAULT_FILENAME):
+
+    f = open(filename, "w+")
+    f.close()
+    print("Success. File erazed: ", filename)
 
 
 if __name__ == "__main__":
