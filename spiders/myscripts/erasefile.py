@@ -1,11 +1,11 @@
-DEFAULT_FILENAME = "../spiders/files/raw/output.csv"
+from myconf.config import DEFAULT_FILENAME_ERASE
 
 
-def erasefile(filename=DEFAULT_FILENAME):
-
-    f = open(filename, "w+")
-    f.close()
-    print("Success. File erazed: ", filename)
+def erasefile():
+    for filename in DEFAULT_FILENAME_ERASE:
+        f = open(filename, "w+")
+        f.close()
+        print("Success. File erazed: ", filename)
 
 
 if __name__ == "__main__":

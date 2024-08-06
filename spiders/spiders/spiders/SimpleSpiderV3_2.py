@@ -1,7 +1,12 @@
+# ===========================================================
+# TODO: Простейший скрипт Selenium + передать количество страниц парса в Scrapy через Bash
+# NOTE: 57 pages, 24 items per page ~ 4 минуты
+# ===========================================================
+
 import re
 import scrapy
 
-CATEGORIES = []
+
 DOMAIN = "https://shop.ms-armaturen.de/"
 SORTING = "?order=m-s-artikelnummer-aufsteigend&p="
 
@@ -9,16 +14,9 @@ SORTING = "?order=m-s-artikelnummer-aufsteigend&p="
 class SimpleSpiderV3(scrapy.Spider):
     name = "SimpleSpiderV3_2"
     allowed_domains = ["shop.ms-armaturen.de"]
-    start_urls = [
-        # "Rohrverbindungen/", 24 items per page
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Verschraubungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Flanschverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Clampverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Schlauchverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1",
-        "https://shop.ms-armaturen.de/Rohrverbindungen/Industriefittings/?order=m-s-artikelnummer-aufsteigend&p=1",
-    ]
+    start_urls = []  # передаётся через bash
     custom_settings = {
-        # "CONCURRENT_REQUESTS": 1,
+        # "CONCURRENT_REQUESTS": 3,
         "FEED_EXPORT_FIELDS": [
             "URL страницы",
             "Заголовок",
@@ -32,6 +30,12 @@ class SimpleSpiderV3(scrapy.Spider):
     }
     visited_urls = []
     category_url = ""
+    page_counter = 2
+
+    def __init__(self, *args, **kwargs):
+        super(SimpleSpiderV3, self).__init__(*args, **kwargs)
+        self.start_urls = [kwargs.get("start_url")]
+        # TODO: self.max_pages = [kwargs.get("max_pages")]
 
     def parse(self, response):
         if response.url not in self.visited_urls:
@@ -50,15 +54,15 @@ class SimpleSpiderV3(scrapy.Spider):
                         product_link,
                         callback=self.parse_product,
                     )
+                # переходим на следующие страницы внутри категории
+                while self.page_counter < 58:
+                    next_url = (
+                        DOMAIN + self.category_url + SORTING + str(self.page_counter)
+                    )
+                    self.page_counter += 1
+                    yield response.follow(next_url, callback=self.parse)
 
-            # переходим на следующие страницы внутри категории
-            i = 2
-            while i < 500:
-                next_url = DOMAIN + self.category_url + SORTING + str(i)
-                i += 1
-                yield response.follow(next_url, callback=self.parse)
-
-            # нет товаров - останавливаем паука
+            # нет товаров - останавливаем парс без убийства паука
             else:
                 return
 
@@ -67,7 +71,7 @@ class SimpleSpiderV3(scrapy.Spider):
             string1 = string.replace(DOMAIN, "").replace(SORTING, "")
         else:
             string1 = string.replace(DOMAIN, "").replace(SORTING, "").replace("/", ", ")
-        string2 = re.sub(r"\d", "", string1)
+        string2 = re.sub(r"\d", "", string1).replace("b'", "").replace("'", "")
         return string2
 
     def parse_product(self, response):
