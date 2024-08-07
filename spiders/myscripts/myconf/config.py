@@ -16,7 +16,7 @@ DEFAULT_FILENAME_PRETTYFILE = [
     "../spiders/files/raw/output_3.csv",
 ]
 FILENAME_SUMMARY = "../spiders/files/cooked/output_summary.csv"
-HEADERS = '"URL страницы","Заголовок","Артикул/SKU","Цена","Наличие","Вес","Картинки","Категории"\n'"
+HEADERS = '"URL страницы","Заголовок","Артикул/SKU","Цена","Наличие","Вес","Картинки","Категории"\n'
 IN_STOCK_FALSE = "Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter"
 IN_STOCK_TRUE = "Auf Lager."
 
