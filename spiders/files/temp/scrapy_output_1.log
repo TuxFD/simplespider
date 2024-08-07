@@ -1,0 +1,336 @@
+2024-08-07 11:14:05 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: spiders)
+2024-08-07 11:14:05 [scrapy.utils.log] INFO: Versions: lxml 4.8.0.0, libxml2 2.9.13, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.3.0, Python 3.10.12 (main, Mar 22 2024, 16:50:05) [GCC 11.4.0], pyOpenSSL 24.2.1 (OpenSSL 3.3.1 4 Jun 2024), cryptography 43.0.0, Platform Linux-5.15.0-116-generic-x86_64-with-glibc2.35
+2024-08-07 11:14:05 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-08-07 11:14:05 [asyncio] DEBUG: Using selector: EpollSelector
+2024-08-07 11:14:05 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-08-07 11:14:05 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-08-07 11:14:05 [scrapy.extensions.telnet] INFO: Telnet Password: 2b8381bccd22b09c
+2024-08-07 11:14:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2024-08-07 11:14:05 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'spiders',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_FIELDS': ['URL страницы',
+                        'Заголовок',
+                        'Артикул/SKU',
+                        'Цена',
+                        'Наличие',
+                        'Вес',
+                        'Картинки',
+                        'Категории'],
+ 'LOG_FILE': 'files/temp/scrapy_output_1.log',
+ 'NEWSPIDER_MODULE': 'spiders.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['spiders.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-08-07 11:14:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-08-07 11:14:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-08-07 11:14:05 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-08-07 11:14:05 [scrapy.core.engine] INFO: Spider opened
+2024-08-07 11:14:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-08-07 11:14:05 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-08-07 11:14:05 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://shop.ms-armaturen.de/robots.txt> (referer: None)
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 6 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 26 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 28 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 30 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 32 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 34 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 35 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 37 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 39 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 41 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 43 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 45 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 46 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 55 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 59 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 63 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 67 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 77 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 80 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 90 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 112 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 149 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 168 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 187 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 206 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 226 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 319 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 320 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 322 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 347 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 386 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 420 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 447 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 454 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 485 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 503 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 559 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 580 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 595 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 605 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 615 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 625 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 635 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 645 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 664 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 673 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 686 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 702 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 717 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 732 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 747 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 762 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 781 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 786 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 800 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 809 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 822 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 838 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 853 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 868 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 887 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 892 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 906 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 915 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 928 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 944 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 959 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 974 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 989 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1004 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1023 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1028 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1042 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1051 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1064 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1080 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1095 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1110 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1125 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1144 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1149 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1163 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1172 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1185 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1201 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1216 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1231 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1246 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1265 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1270 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1284 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1293 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1306 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1322 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1337 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1352 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1367 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1382 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1397 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1412 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1427 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1446 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1451 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1476 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1563 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1575 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1583 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1595 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1603 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1615 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1623 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1635 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1643 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1655 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1663 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1675 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1695 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1737 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1756 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1775 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1794 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1814 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1860 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1864 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1892 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1900 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1908 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1916 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1945 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 1975 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2035 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2054 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2113 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2130 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2131 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2132 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2133 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2134 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2135 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2136 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2137 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2138 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2139 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2140 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2148 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2153 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2154 without any user agent to enforce it on.
+2024-08-07 11:14:05 [protego] DEBUG: Rule at line 2159 without any user agent to enforce it on.
+2024-08-07 11:14:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1> (referer: None)
+2024-08-07 11:14:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1> (referer: None)
+Traceback (most recent call last):
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
+    yield next(it)
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "/home/sentinel/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/sentinel/Документы/CODE/PARSERs/test_004.2/spiders/spiders/spiders/SimpleSpiderV3_2.py", line 59, in parse
+    while self.page_counter < self.maxpage[0]:
+TypeError: '<' not supported between instances of 'int' and 'str'
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-RED.-DURCHGANG/040030001204> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-RED.-DURCHGANG/040030001204>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-RED.-DURCHGANG/040030001204', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp1/2" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030001204\n                        '], 'Цена': ['\n                    Katalogpreis: 14,16\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-4-316-316Ti/040030101414> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-8-316-316Ti/040030101814> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-8-1-4-316-316Ti-IG-IG/040030103804014> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-2-316-316Ti/040030101214> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-4-1-2-316-316Ti-IG-IG/040030103404012> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-8-316-316Ti/040030103814> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-4-316-316Ti/040030101414>
+{'URL страницы': 'https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-4-316-316Ti/040030101414', 'Заголовок': ['\n                    WINKEL 90 IG-IG Rp1/4" 316/316Ti\n                '], 'Артикул/SKU': ['\n                            040030101414\n                        '], 'Цена': ['\n                    Katalogpreis: 1,46\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.062 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/41/d2/03/1623401906/0400301-k.jpg', 'https://shop.ms-armaturen.de/media/b5/91/8d/1603887164/0400301.jpg', 'https://shop.ms-armaturen.de/media/5a/97/c4/1623919168/0400301_1_Bild_1.jpg', 'https://shop.ms-armaturen.de/media/6b/27/25/1636980139/0400301_2_Bild_2.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-8-316-316Ti/040030101814>
+{'URL страницы': 'https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-8-316-316Ti/040030101814', 'Заголовок': ['\n                    WINKEL 90 IG-IG Rp1/8" 316/316Ti\n                '], 'Артикул/SKU': ['\n                            040030101814\n                        '], 'Цена': ['\n                    Katalogpreis: 1,46\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.04 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/41/d2/03/1623401906/0400301-k.jpg', 'https://shop.ms-armaturen.de/media/b5/91/8d/1603887164/0400301.jpg', 'https://shop.ms-armaturen.de/media/5a/97/c4/1623919168/0400301_1_Bild_1.jpg', 'https://shop.ms-armaturen.de/media/6b/27/25/1636980139/0400301_2_Bild_2.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/RED-WINKEL-90-Rp1-2-3-8-316-316Ti-IG-IG/040030101204038> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-8-1-4-316-316Ti-IG-IG/040030103804014>
+{'URL страницы': 'https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-8-1-4-316-316Ti-IG-IG/040030103804014', 'Заголовок': ['\n                    RED-WINKEL 90 Rp3/8"-1/4" 316/316Ti IG-IG\n                '], 'Артикул/SKU': ['\n                            040030103804014\n                        '], 'Цена': ['\n                    Katalogpreis: 2,16\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': [], 'Картинки': ['https://shop.ms-armaturen.de/media/38/b2/98/1653401194/0400301R-k.jpg', 'https://shop.ms-armaturen.de/media/72/0b/b2/1653401195/0400301R.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-2-316-316Ti/040030101214>
+{'URL страницы': 'https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp1-2-316-316Ti/040030101214', 'Заголовок': ['\n                    WINKEL 90 IG-IG Rp1/2" 316/316Ti\n                '], 'Артикул/SKU': ['\n                            040030101214\n                        '], 'Цена': ['\n                    Katalogpreis: 1,97\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.04 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/41/d2/03/1623401906/0400301-k.jpg', 'https://shop.ms-armaturen.de/media/b5/91/8d/1603887164/0400301.jpg', 'https://shop.ms-armaturen.de/media/5a/97/c4/1623919168/0400301_1_Bild_1.jpg', 'https://shop.ms-armaturen.de/media/6b/27/25/1636980139/0400301_2_Bild_2.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-FREIER-DURCHGANG/040030020014> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-4-1-2-316-316Ti-IG-IG/040030103404012>
+{'URL страницы': 'https://shop.ms-armaturen.de/RED-WINKEL-90-Rp3-4-1-2-316-316Ti-IG-IG/040030103404012', 'Заголовок': ['\n                    RED-WINKEL 90 Rp3/4"-1/2" 316/316Ti IG-IG\n                '], 'Артикул/SKU': ['\n                            040030103404012\n                        '], 'Цена': ['\n                    Katalogpreis: 3,96\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': [], 'Картинки': ['https://shop.ms-armaturen.de/media/38/b2/98/1653401194/0400301R-k.jpg', 'https://shop.ms-armaturen.de/media/72/0b/b2/1653401195/0400301R.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-8-316-316Ti/040030103814>
+{'URL страницы': 'https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-8-316-316Ti/040030103814', 'Заголовок': ['\n                    WINKEL 90 IG-IG Rp3/8" 316/316Ti\n                '], 'Артикул/SKU': ['\n                            040030103814\n                        '], 'Цена': ['\n                    Katalogpreis: 1,59\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.04 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/41/d2/03/1623401906/0400301-k.jpg', 'https://shop.ms-armaturen.de/media/b5/91/8d/1603887164/0400301.jpg', 'https://shop.ms-armaturen.de/media/5a/97/c4/1623919168/0400301_1_Bild_1.jpg', 'https://shop.ms-armaturen.de/media/6b/27/25/1636980139/0400301_2_Bild_2.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/RED-WINKEL-90-Rp1-2-3-8-316-316Ti-IG-IG/040030101204038>
+{'URL страницы': 'https://shop.ms-armaturen.de/RED-WINKEL-90-Rp1-2-3-8-316-316Ti-IG-IG/040030101204038', 'Заголовок': ['\n                    RED-WINKEL 90 Rp1/2"-3/8" 316/316Ti IG-IG\n                '], 'Артикул/SKU': ['\n                            040030101204038\n                        '], 'Цена': ['\n                    Katalogpreis: 2,57\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': [], 'Картинки': ['https://shop.ms-armaturen.de/media/38/b2/98/1653401194/0400301R-k.jpg', 'https://shop.ms-armaturen.de/media/72/0b/b2/1653401195/0400301R.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-4-316-316Ti/040030103414> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-FREIER-DURCHGANG/040030020014>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-FREIER-DURCHGANG/040030020014', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp2" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030020014\n                        '], 'Цена': ['\n                    Katalogpreis: 106,22\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            3.521 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-4-316-316Ti/040030103414>
+{'URL страницы': 'https://shop.ms-armaturen.de/WINKEL-90-IG-IG-Rp3-4-316-316Ti/040030103414', 'Заголовок': ['\n                    WINKEL 90 IG-IG Rp3/4" 316/316Ti\n                '], 'Артикул/SKU': ['\n                            040030103414\n                        '], 'Цена': ['\n                    Katalogpreis: 2,84\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.026 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/41/d2/03/1623401906/0400301-k.jpg', 'https://shop.ms-armaturen.de/media/b5/91/8d/1603887164/0400301.jpg', 'https://shop.ms-armaturen.de/media/5a/97/c4/1623919168/0400301_1_Bild_1.jpg', 'https://shop.ms-armaturen.de/media/6b/27/25/1636980139/0400301_2_Bild_2.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-RED.-DURCHGANG/040030020004> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-RED.-DURCHGANG/040030011404> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-FREIER-DURCHGANG/040030011214> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-FREIER-DURCHGANG/040030011414> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-RED.-DURCHGANG/040030010004> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-RED.-DURCHGANG/040030011204> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-RED.-DURCHGANG/040030020004>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp2-316Ti-RED.-DURCHGANG/040030020004', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp2" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030020004\n                        '], 'Цена': ['\n                    Katalogpreis: 57,05\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-FREIER-DURCHGANG/040030010014> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-RED.-DURCHGANG/040030011404>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-RED.-DURCHGANG/040030011404', 'Заголовок': ['\n                    1-TLG.KUGELHAHN IG-IG Rp1.1/4" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030011404\n                        '], 'Цена': ['\n                    Katalogpreis: 35,98\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-FREIER-DURCHGANG/040030003814> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-FREIER-DURCHGANG/040030011214>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-FREIER-DURCHGANG/040030011214', 'Заголовок': ['\n                    2-TLG.KUGELHAHN IG-IG Rp1.1/2" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030011214\n                        '], 'Цена': ['\n                    Katalogpreis: 70,32\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            2.138 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-FREIER-DURCHGANG/040030003414> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-FREIER-DURCHGANG/040030011414>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.KUGELHAHN-IG-IG-Rp1.1-4-316Ti-FREIER-DURCHGANG/040030011414', 'Заголовок': ['\n                    2-TLG.KUGELHAHN IG-IG Rp1.1/4" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030011414\n                        '], 'Цена': ['\n                    Katalogpreis: 51,30\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            1.371 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-RED.-DURCHGANG/040030010004>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-RED.-DURCHGANG/040030010004', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp1" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030010004\n                        '], 'Цена': ['\n                    Katalogpreis: 20,80\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-RED.-DURCHGANG/040030011204>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.KUGELHAHN-IG-IG-Rp1.1-2-316Ti-RED.-DURCHGANG/040030011204', 'Заголовок': ['\n                    1-TLG.KUGELHAHN IG-IG Rp1.1/2" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030011204\n                        '], 'Цена': ['\n                    Katalogpreis: 42,54\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-FREIER-DURCHGANG/040030010014>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-316Ti-FREIER-DURCHGANG/040030010014', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp1" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030010014\n                        '], 'Цена': ['\n                    Katalogpreis: 36,93\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-FREIER-DURCHGANG/040030003814>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-FREIER-DURCHGANG/040030003814', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp3/8 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030003814\n                        '], 'Цена': ['\n                    Katalogpreis: 19,78\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': [], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-FREIER-DURCHGANG/040030003414>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-FREIER-DURCHGANG/040030003414', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp3/4" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030003414\n                        '], 'Цена': ['\n                    Katalogpreis: 26,73\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-RED.-DURCHGANG/040030003804> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-FREIER-DURCHGANG/040030001414> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-RED.-DURCHGANG/040030001404> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-FREIER-DURCHGANG/040030001214> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-RED.-DURCHGANG/040030003404> (referer: https://shop.ms-armaturen.de/Rohrverbindungen/?order=m-s-artikelnummer-aufsteigend&p=1)
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-RED.-DURCHGANG/040030003804>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-8-316Ti-RED.-DURCHGANG/040030003804', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp3/8" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030003804\n                        '], 'Цена': ['\n                    Katalogpreis: 13,08\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-FREIER-DURCHGANG/040030001414>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-FREIER-DURCHGANG/040030001414', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp1/4" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030001414\n                        '], 'Цена': ['\n                    Katalogpreis: 19,78\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.27 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-RED.-DURCHGANG/040030001404>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp1-4-316Ti-RED.-DURCHGANG/040030001404', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp1/4" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030001404\n                        '], 'Цена': ['\n                    Katalogpreis: 13,08\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-FREIER-DURCHGANG/040030001214>
+{'URL страницы': 'https://shop.ms-armaturen.de/2-TLG.-KUGELHAHN-IG-IG-Rp1-2-316Ti-FREIER-DURCHGANG/040030001214', 'Заголовок': ['\n                    2-TLG. KUGELHAHN IG-IG Rp1/2" 316Ti FREIER DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030001214\n                        '], 'Цена': ['\n                    Katalogpreis: 21,88\xa0€*\n                '], 'Наличие': ['\n                    Auf Lager.\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/22/0c/0f/1653400256/0400300F-k.jpg', 'https://shop.ms-armaturen.de/media/10/55/81/1653400257/0400300F.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-RED.-DURCHGANG/040030003404>
+{'URL страницы': 'https://shop.ms-armaturen.de/1-TLG.-KUGELHAHN-IG-IG-Rp3-4-316Ti-RED.-DURCHGANG/040030003404', 'Заголовок': ['\n                    1-TLG. KUGELHAHN IG-IG Rp3/4" 316Ti RED. DURCHGANG\n                '], 'Артикул/SKU': ['\n                            040030003404\n                        '], 'Цена': ['\n                    Katalogpreis: 17,71\xa0€*\n                '], 'Наличие': ['\n                    Derzeit nicht auf Lager.', '\n                    Bitte wenden Sie sich an Ihren zuständigen M&S Vertriebsmitarbeiter\n                '], 'Вес': ['\n            0.43 kg\n        '], 'Картинки': ['https://shop.ms-armaturen.de/media/ed/b0/91/1653400254/0400300EC-k.jpg', 'https://shop.ms-armaturen.de/media/89/01/97/1653400255/0400300EC.jpg'], 'Категории': 'Rohrverbindungen, '}
+2024-08-07 11:14:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-08-07 11:14:07 [scrapy.extensions.feedexport] INFO: Stored csv feed (24 items) in: files/raw/output_1.csv
+2024-08-07 11:14:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 22544,
+ 'downloader/request_count': 26,
+ 'downloader/request_method_count/GET': 26,
+ 'downloader/response_bytes': 725479,
+ 'downloader/response_count': 26,
+ 'downloader/response_status_count/200': 25,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 2.416994,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 8, 7, 8, 14, 7, 788093, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 5241875,
+ 'httpcompression/response_count': 26,
+ 'item_scraped_count': 24,
+ 'log_count/DEBUG': 201,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 11,
+ 'memusage/max': 66498560,
+ 'memusage/startup': 66498560,
+ 'request_depth_max': 1,
+ 'response_received_count': 26,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 25,
+ 'scheduler/dequeued/memory': 25,
+ 'scheduler/enqueued': 25,
+ 'scheduler/enqueued/memory': 25,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2024, 8, 7, 8, 14, 5, 371099, tzinfo=datetime.timezone.utc)}
+2024-08-07 11:14:07 [scrapy.core.engine] INFO: Spider closed (finished)

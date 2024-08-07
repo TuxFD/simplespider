@@ -35,6 +35,7 @@ class SimpleSpiderV3(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(SimpleSpiderV3, self).__init__(*args, **kwargs)
         self.start_urls = [kwargs.get("start_url")]
+        self.maxpage = [kwargs.get("maxpage")]
         # TODO: self.max_pages = [kwargs.get("max_pages")]
 
     def parse(self, response):
@@ -55,7 +56,7 @@ class SimpleSpiderV3(scrapy.Spider):
                         callback=self.parse_product,
                     )
                 # переходим на следующие страницы внутри категории
-                while self.page_counter < 58:
+                while self.page_counter < self.maxpage:
                     next_url = (
                         DOMAIN + self.category_url + SORTING + str(self.page_counter)
                     )
